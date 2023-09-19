@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Daño Pokémon</title>
+    <link rel="stylesheet" href="css/Style.css">
+</head>
+<style>
+ body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    #resultado {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    
+</style>
+<body>
+    <h1>Calculadora de Daño Pokémon</h1>
+    <label for="type1">Tipo de Ataque:</label>
+    <select id="type1">
+        <option value="electricidad">Electricidad</option>
+        <option value="agua">Agua</option>
+        <option value="fuego">Fuego</option>
+        <option value="hierba">Hierba</option>
+    </select>
+    <br><br>
+    <label for="type2">Tipo de Defensa:</label>
+    <select id="type2">
+        <option value="electricidad">Electricidad</option>
+        <option value="agua">Agua</option>
+        <option value="fuego">Fuego</option>
+        <option value="hierba">Hierba</option>
+    </select>
+    <br><br>
+    <label for="attack">Ataque:</label>
+    <input type="number" id="attack" min="1">
+    <br><br>
+    <label for="defense">Defensa:</label>
+    <input type="number" id="defense" min="1">
+    <br>
+    <br>
+    <button onclick="calculateDamage()">Calcular Daño</button>
+    <button onclick="limpiarResultado()">Limpiar</button>
+    <br>
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+        function calculateDamage() {
+            const type1 = document.getElementById("type1").value;
+            const type2 = document.getElementById("type2").value;
+            const attack = parseFloat(document.getElementById("attack").value);
+            const defense = parseFloat(document.getElementById("defense").value);
+
+            var efficacy = 0.5;
+
+            if (type1 !== type2) {
+                if ((type1 === "fuego" && type2 === "hierba") ||
+                    (type2 === "fuego" && type1 === "hierba")) {
+                    efficacy = 2;
+                } else if ((type1 === "agua" && type2 === "fuego") ||
+                           (type2 === "agua" && type1 === "fuego")) {
+                    efficacy = 2;
+                } else if ((type1 === "hierba" && type2 === "agua") ||
+                           (type2 === "hierba" && type1 === "agua")) {
+                    efficacy = 2;
+                } else if ((type1 === "electricidad" && type2 === "agua") ||
+                           (type2 === "electricidad" && type1 === "agua")) {
+                    efficacy = 2;
+                } else if ((type1 === "fuego" && type2 === "electrico") ||
+                           (type2 === "fuego" && type1 === "electrico")) {
+                    efficacy = 1;
+                } else if ((type1 === "fuego" && type2 === "hierba") ||
+                           (type2 === "fuego" && type1 === "hierba")) {
+                    efficacy = 1;
+                }
+            }
+
+            const damage = Math.ceil(50 * (attack / defense) * efficacy);
+            document.getElementById("resultado").textContent = `Daño estimado: ${damage}`;
+        }
+        function limpiarResultado() {
+            document.getElementById("resultado").innerHTML = '';
+        }
+    </script>
+</body>
+</html>

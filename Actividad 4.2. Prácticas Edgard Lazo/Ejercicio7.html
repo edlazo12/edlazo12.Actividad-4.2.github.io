@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coche en Movimiento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <style type="text/css">
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 450px; /* Ancho del visor */
+    height: 150px; /* Alto del visor */
+    margin: 20px auto;
+}
+
+/* Estilos para el visor y los fondos */
+#visor {
+    position: relative;
+    width: 100%;
+    height: 400%;
+    overflow: hidden;
+}
+
+.fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('fondo1.gif'); 
+    background-repeat: repeat-x;
+    animation: moverFondo 5s linear infinite; /* Controla la velocidad de desplazamiento */
+}
+
+#fondoUno {
+    left: 0;
+}
+
+#fondoDos {
+    left: 100%;
+}
+
+@keyframes moverFondo {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Estilos para el coche */
+#coche {
+    position: absolute;
+    width: 100px; /* Ancho del coche */
+    height: 250px; /* Alto del coche */
+    background-size: 100% 100%;
+    top: 50%; /* Alinea el coche verticalmente en el centro */
+    left: 270px; /* Posición inicial del coche */
+    transform: translate(-150%, -50%);
+}
+
+
+    </style>
+    <div class="container">
+        <div id="visor">
+            <div id="fondoUno" class="fondo">
+                <img src="fondo1.gif" alt="fondo">
+            </div>
+            <div id="fondoDos" class="fondo">
+                <img src="fondo1.gif" alt="fondo">
+            </div>
+            <div id="coche">
+                <img src="fondo2.gif" alt="fondo">
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+#resultado  {
+    font-size: 18px;
+    
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 70px;
+    margin-top: -70px;
+}
+#rango{
+    flex: 1;
+    margin: 70px;
+    
+}
+#fin , #inicio{
+    width: 180px;
+}
+h1{
+    margin: 70px;
+}
+body #max {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  input, text {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 0px;
+  }
+
+  #resultado {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  #fibonacci {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  #cuadro {
+    border: 2px solid black;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+  }
+  img  {
+    width: 140px;
+    margin-top: 20px;
+
+  }
+  nav ul {
+    display: flex;
+  
+    list-style: none;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #27463D;
+  
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #fff;
+    color: #333;
+  
+  }
+  /*** 7.0 - MediaQueries Smarthphone  ***/
+@media (max-width: 600px) {
+  
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/*** 7.0 - MediaQueries Smarthphone  ***/
+  
+
+ 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Imágenes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <style type="text/css">
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.image img {
+    width: 200px; /* Establecemos un tamaño fijo */
+    height: 200px; /* Establecemos un tamaño fijo */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.visor {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.visor img {
+    margin: auto;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.cerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+
+    </style>
+
+    <div class="container">
+        <h1>Visor de Imagenes</h1>
+        <div class="gallery">
+            <div class="image" onclick="abrirVisor(0)">
+                <img src="https://cdn.inteligenciaviajera.com/wp-content/uploads/2020/03/Sitios-tur%C3%ADsticos-en-el-mundo.jpg" alt="Imagen 1">
+            </div>
+            <div class="image" onclick="abrirVisor(1)">
+                <img src="https://media.admagazine.com/photos/6283c46dbdffe6073f3d108a/master/w_1600%2Cc_limit/GettyImages-484162163.jpg" alt="Imagen 2">
+            </div>
+            <div class="image" onclick="abrirVisor(2)">
+                <img src="https://www.lavanguardia.com/files/image_948_465/uploads/2016/03/30/5fa2b46ccdf13.jpeg" alt="Imagen 3">
+            </div>
+            <div class="image" onclick="abrirVisor(3)">
+                <img src="https://tipsparatuviaje.com/wp-content/uploads/2019/08/machu-picchu-peru.jpg" alt="Imagen 3">
+            </div>
+            <div class="image" onclick="abrirVisor(4)">
+                <img src="https://www.hola.com/imagenes/viajes/2014091973730/joyas-maravillosas-america-norte/0-287-833/a_san-francisc-a.jpg" alt="Imagen 4">
+            </div>
+            <div class="image" onclick="abrirVisor(5)">
+                <img src="https://cloudfront-us-east-1.images.arcpublishing.com/radiomitre/4LM4DPSSDBADFP5GA47URVJO3E.jpg" alt="Imagen 5">
+            </div>
+            <div class="image" onclick="abrirVisor(6)">
+                <img src="https://elcomercio.pe/resizer/kTzwLZvr-HoRcRA8qHf22KigB28=/980x0/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/NS6BXMC2D5FXDPCC2QMG76HJAQ.jpg" alt="Imagen 6">
+            </div>
+            <div class="image" onclick="abrirVisor(7)">
+                <img src="https://spanish.xinhuanet.com/photo/2015-08/28/134564500_14407402808231n.jpg" alt="Imagen 8">
+            </div>
+            <div class="image" onclick="abrirVisor(8)">
+                <img src="https://www.hola.com/imagenes/viajes/2014072572733/top-25-destinos-turisticos-mundo/0-281-706/a_IS099RM1G_cordo-a.jpg" alt="Imagen 9">
+            </div>
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+        <div id="visor" class="visor">
+            <span class="cerrar" onclick="cerrarVisor()">&times;</span>
+            <img id="imagenVisor" class="imagen-visormg">
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
